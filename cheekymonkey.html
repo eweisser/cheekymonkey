@@ -1,0 +1,451 @@
+<html>
+<head>
+<title>Let's play Cheeky Monkey!</title>
+
+<style>
+
+span {
+font: #000000;
+font-size: 24px;
+display: inline-block;
+}
+
+#wholescreen {
+background-image: url("img/other/bkgd.png");
+background-size: 100% 100%;
+position: fixed;
+left: 0%;
+width: 100%;
+height: 100%;
+top: 0px;
+}
+
+#title {
+  display: block;
+  font: 36pt #000000;
+  position: absolute;
+  width: 80%;
+  height: 50%;
+  left: 10%;
+  top: 5%;
+}
+
+#homeMonkey1 {
+  position: absolute;
+  right: 10vw;
+  top: -10vh;
+  width: 25vw;
+}
+
+#titleMonkey2 {
+  position: absolute;
+  left: 40vw;
+  top: 135vh;
+  width: 25vw;
+  animation-name: titleMonkey2RiseFall;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes titleMonkey2RiseFall {
+  0%    {top: 135vh;}
+  50%   {top: 52vh;}
+  100%  {top: 135vh;}
+}
+
+#titleMonkey3Upper {
+  position: absolute;
+  left: 9vw;
+  top: 42vh;
+  height: 105px;
+}
+
+#titleMonkey3Lower {
+  position: absolute;
+  left: 9vw;
+  top: 62vh;
+  height: 105px;
+}
+
+#svgHTP {
+  position: absolute;
+  left: 10%;
+  top: 45%;
+  width: 35%;
+  height: 80px;
+}
+
+#svgGO {
+  position: absolute;
+  left: 10%;
+  top: 65%;
+  width: 25%;
+  height: 80px;
+}
+
+#numberbuttons {
+  display: none;
+}
+
+.numberButton {
+  font: 48pt sans-serif;
+  color: #FFFFFF;
+}
+
+#button3 {
+  position: absolute;
+  width: 10vw;
+  left: 15%;
+  top: 5%;
+}
+
+#button4 {
+  position: absolute;
+  width: 10%;
+  left: 35%;
+  top: 5%;
+}
+
+#button5 {
+  position: absolute;
+  width: 10%;
+  left: 55%;
+  top: 5%;
+}
+
+#button6 {
+  color: #000000;
+  position: absolute;
+  width: 10%;
+  left: 75%;
+  top: 5%;
+}
+
+#button7 {
+  position: absolute;
+  width: 10%;
+  left: 15%;
+  top: 30%;
+}
+
+#button8 {
+  position: absolute;
+  width: 10%;
+  left: 35%;
+  top: 30%;
+}
+
+#button9 {
+  position: absolute;
+  width: 10%;
+  left: 55%;
+  top: 30%;
+}
+
+#button10 {
+  position: absolute;
+  width: 10%;
+  left: 75%;
+  top: 30%;
+}
+
+#buttonMenuMonkey1 {
+  display: none;
+  position: fixed;
+  height: 40%;
+  top: 55%;
+  animation-name: buttonMenuMonkey1Ani;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes buttonMenuMonkey1Ani {
+  0%    {right: 100vw;}
+  7.5%  {right: 60vw;}
+  15%   {right: 100vw;}
+  100%  {right: 100vw;}
+}
+
+#buttonMenuMonkey2 {
+  display: none;
+  position: fixed;
+  height: 40%;
+  top: 55%;
+  animation-name: buttonMenuMonkey2Ani;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes buttonMenuMonkey2Ani {
+  0%    {left: 100vw;}
+  20%   {left: 100vw;}
+  27.5%   {left: 74vw;}
+  35%   {left: 100vw;}
+  100%  {left: 100vw;}
+}
+
+#buttonMenuMonkey3 {
+  display: none;
+  position: fixed;
+  height: 50%;
+  left: 42.5%;
+  animation-name: buttonMenuMonkey3Ani;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes buttonMenuMonkey3Ani {
+  0%    {bottom: 100vh;}
+  40%   {bottom: 100vh;}
+  47.5%   {bottom: 20vh;}
+  55%   {bottom: 100vh;}
+  100%  {bottom: 100vh;}
+}
+
+#buttonMenuMonkey4 {
+  display: none;
+  position: fixed;
+  height: 40%;
+  top: 100%;
+  animation-name: buttonMenuMonkey4Ani;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes buttonMenuMonkey4Ani {
+  0%    {left: 70vw; top: 100vh;}
+  60%   {left: 70vw; top: 100vh;}
+  67.5%   {left: 55vw; top: 75vh;}
+  75%   {left: 70vw; top: 100vh;}
+  100%  {left: 70vw; top: 100vh;}
+}
+
+#buttonMenuMonkey5 {
+  display: none;
+  position: fixed;
+  height: 60%;
+  left: 42.5%;
+  animation-name: buttonMenuMonkey5Ani;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes buttonMenuMonkey5Ani {
+  0%    {bottom: 100vh;}
+  80%   {bottom: 100vh;}
+  87.5%   {bottom: 20vh;}
+  95%   {bottom: 100vh;}
+  100%  {bottom: 100vh;}
+}
+
+#wordDisplay {
+  display: none;
+  position: absolute;
+  height: 66.6667%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#monkeyGif {
+  display: none;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+}
+
+</style>
+
+</head>
+
+<script>
+
+var dictionary0 = [];
+var dictionary1 = [];
+var dictionary2 = [];
+var dictionary3 = ["ant","bat","bee","bus","car","cat","cow","dog","ear","egg","eye","fan","fox","hat","ice","key","leg","old","owl","pen","pig","red","run","sky","sun","zoo"];
+var dictionary4 = ["ball","bear","bike","bird","blue","boat","book","cake","card","corn","deer","doll","door","duck","fish","foot","fork","frog","game","glue","gold","gray","hair","hand","head","hill","kite","kiwi","leaf","lion","moon","neck","nose","pink","rain","rice","rock","shoe","snow","soap","sock","star","swim","tree","wolf"];
+var dictionary5 = ["apple","black","bread","brown","chair","clock","cloud","dress","green","heart","house","juice","koala","korea","lemon","mouth","music","onion","phone","piano","pizza","river","robot","ruler","scarf","shark","sheep","shirt","skirt","snake","spoon","straw","sugar","tiger","tooth","train","truck","whale","white","zebra"];
+var dictionary6 = ["butter","candle","carrot","cheese","coffee","doctor","eraser","finger","flower","guitar","marble","mirror","monkey","noodle","orange","pencil","pillow","purple","puzzle","rabbit","ribbon","shadow","silver","spider","tomato","tongue","turtle","violin","window","yellow"];
+var dictionary7 = ["airport","capital","chicken","diamond","dolphin","giraffe","glasses","hundred","kitchen","library","million","octopus","penguin","rainbow"];
+var dictionary8 = ["backpack","computer","dinosaur","elephant","elevator","fountain","hospital","kangaroo","mountain","mushroom","notebook","sandwich","squirrel","thousand","umbrella"];
+var dictionary9 = ["alligator","australia","chocolate","christmas","lightning","pineapple","spaghetti","submarine","vegetable"];
+var dictionary10 = ["basketball","rhinoceros","skateboard","television","watermelon"]
+
+var dictionaryOfDictionaries = [dictionary0, dictionary1, dictionary2, dictionary3, dictionary4, dictionary5, dictionary6, dictionary7, dictionary8, dictionary9, dictionary10];
+
+var gradientColorArray = ["0","1","2","#D94141","#4368BE","#68CC43","#FFFF43","#A030C8","#000000","#683800","#E88828"]
+
+function showNumberButtonMenu() {
+  document.getElementById("numberbuttons").style.display = "block";
+  document.getElementById("buttonMenuMonkey1").style.display = "block";
+  document.getElementById("buttonMenuMonkey2").style.display = "block";
+  document.getElementById("buttonMenuMonkey3").style.display = "block";
+  document.getElementById("buttonMenuMonkey4").style.display = "block";
+  document.getElementById("buttonMenuMonkey5").style.display = "block";
+
+  document.getElementById("title").style.display = "none";
+  document.getElementById("svgHTP").style.display = "none";
+  document.getElementById("svgGO").style.display = "none";
+  document.getElementById("wordDisplay").style.display = "none";
+  document.getElementById("homeMonkey1").style.display = "none";
+  document.getElementById("titleMonkey2").style.display = "none";
+  document.getElementById("titleMonkey3Upper").style.display = "none";
+  document.getElementById("titleMonkey3Lower").style.display = "none";
+  document.getElementById("monkeyGif").style.display = "none";
+
+  document.getElementById("wholescreen").style.backgroundImage = "url('img/other/bkgd.png')";
+}
+
+function getWord(letterCount) {
+  document.getElementById("wordDisplay").style.display = "block";
+
+  document.getElementById("title").style.display = "none";
+  document.getElementById("svgHTP").style.display = "none";
+  document.getElementById("svgGO").style.display = "none";
+  document.getElementById("numberbuttons").style.display = "none";
+  document.getElementById("buttonMenuMonkey1").style.display = "none";
+  document.getElementById("buttonMenuMonkey2").style.display = "none";
+  document.getElementById("buttonMenuMonkey3").style.display = "none";
+  document.getElementById("buttonMenuMonkey4").style.display = "none";
+  document.getElementById("buttonMenuMonkey5").style.display = "none";
+
+  document.getElementById("wholescreen").style.backgroundImage = "linear-gradient(" + gradientColorArray[letterCount] + ", #FFFFFF 66.7%)";
+
+  var dictionarySize = dictionaryOfDictionaries[letterCount].length;
+  var randomWordNumber = Math.floor(Math.random()*dictionarySize);
+  var randomWord = dictionaryOfDictionaries[letterCount][randomWordNumber];
+  //console.log(randomWord);
+
+  document.getElementById("wordDisplay").src = "img/words/" + letterCount + randomWord + ".png";
+  document.getElementById('wordDisplay').setAttribute('onerror','this.onerror=null;this.src="img/words/' + letterCount + randomWord + '.gif";'); // this substitutes a .gif ending for the image file if a .png with that name isn't found.
+}
+
+
+
+
+
+function getMonkeyGif() {
+  document.getElementById("monkeyGif").style.display = "block";
+
+  document.getElementById("wordDisplay").style.display = "none";
+
+  var randomMonkeyGifNumber = Math.floor(Math.random()*20);
+  document.getElementById("monkeyGif").src = "img/monkeygifs/mg" + randomMonkeyGifNumber + ".gif";
+}
+
+
+</script>
+
+<body>
+<!-- <body onload="showAll()"> -->
+
+<div id="wholescreen">
+
+<img id="title" src="img/other/title.png">
+
+<svg id="svgHTP" onclick="getWord(3)">
+  <defs>
+    <linearGradient id="grad1" x1="75%" y1="0%" x2="25%" y2="100%">
+      <stop offset="49%" style="stop-color:#FF0;stop-opacity:1" />
+      <stop offset="51%" style="stop-color:#BB0;stop-opacity:1" />
+    </linearGradient>
+    <filter id="f1" x="0" y="0" width="200%" height="200%">
+      <feOffset result="offOut" in="SourceAlpha" dx="2" dy="2" />
+      <feGaussianBlur result="blurOut" in="offOut" stdDeviation="2" />
+      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+    </filter>
+  </defs>
+  <rect x="0%" y="0%" rx="40" ry="40" width="100%" height="100%" fill="url(#grad1)" style="stroke:black;stroke-width:2" />
+  <text x="25%" y="50%" fill="#BB00BB" dominant-baseline="middle" text-align="right" font-size="4.5vw" font-family="Calibri" font-weight="bold" filter="url(#f1)" onclick="getWord(3)">how to play</text>
+</svg>
+
+<svg id="svgGO">
+  <defs>
+    <linearGradient id="grad1" x1="75%" y1="0%" x2="25%" y2="100%">
+      <stop offset="49%" style="stop-color:#FF0;stop-opacity:1" />
+      <stop offset="51%" style="stop-color:#BB0;stop-opacity:1" />
+    </linearGradient>
+    <filter id="f1" x="0" y="0" width="200%" height="200%">
+      <feOffset result="offOut" in="SourceAlpha" dx="2" dy="2" />
+      <feGaussianBlur result="blurOut" in="offOut" stdDeviation="2" />
+      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+    </filter>
+  </defs>
+  <rect x="0%" y="0%" rx="40" ry="40" width="100%" height="100%" fill="url(#grad1)" style="stroke:black;stroke-width:2" onclick="showNumberButtonMenu()" />
+  <text x="50%" y="50%" fill="#BB00BB" dominant-baseline="middle" text-anchor="middle" font-size="4.5vw" font-family="Calibri" font-weight="bold" filter="url(#f1)" onclick="showNumberButtonMenu()">go!</text>
+</svg>
+
+<img id="titleMonkey3Upper" src="img/other/titleMonkey3.png">
+<img id="titleMonkey3Lower" src="img/other/titleMonkey3.png">
+
+<img id="homeMonkey1" src="img/other/homeMonkey1.gif">
+<img id="titleMonkey2" src="img/other/titleMonkey2.png">
+
+
+
+<div id="numberbuttons">
+<svg id="button3" onclick="getWord(3)">
+<circle cx="50%" cy="50%" r="40%" stroke="#000000" stroke-width="2" fill="#D94141" />
+<text x="50%" y="50%" fill="white" font-size="5vw" font-family="Arial" dominant-baseline="central" text-anchor="middle">3</text>
+</svg>
+
+<svg id="button4" onclick="getWord(4)">
+<circle cx="50%" cy="50%" r="40%" stroke="#000000" stroke-width="2" fill="#4477CC" />
+<text x="50%" y="50%" fill="white" font-size="5vw" font-family="Arial" dominant-baseline="central" text-anchor="middle">4</text>
+</svg>
+
+<svg id="button5" onclick="getWord(5);">
+<circle cx="50%" cy="50%" r="40%" stroke="#000000" stroke-width="2" fill="#68CC43" />
+<text x="50%" y="50%" fill="black" font-size="5vw" font-family="Arial" dominant-baseline="central" text-anchor="middle">5</text>
+</svg>
+
+<svg id="button6" onclick="getWord(6)">
+<circle cx="50%" cy="50%" r="40%" stroke="#000000" stroke-width="2" fill="#FFEF00" />
+<text x="50%" y="50%" fill="black" font-size="5vw" font-family="Arial" dominant-baseline="central" text-anchor="middle">6</text>
+</svg>
+
+<svg id="button7" onclick="getWord(7)">
+<circle cx="50%" cy="50%" r="40%" stroke="#000000" stroke-width="2" fill="#A030C8" />
+<text x="50%" y="50%" fill="white" font-size="5vw" font-family="Arial" dominant-baseline="central" text-anchor="middle">7</text>
+</svg>
+
+<svg id="button8" onclick="getWord(8)">
+<circle cx="50%" cy="50%" r="40%" stroke="#000000" stroke-width="2" fill="#000000" />
+<text x="50%" y="50%" fill="white" font-size="5vw" font-family="Arial" dominant-baseline="central" text-anchor="middle">8</text>
+</svg>
+
+<svg id="button9" onclick="getWord(9)">
+<circle cx="50%" cy="50%" r="40%" stroke="#000000" stroke-width="2" fill="#683800" />
+<text x="50%" y="50%" fill="white" font-size="5vw" font-family="Arial" dominant-baseline="central" text-anchor="middle">9</text>
+</svg>
+
+<svg id="button10" onclick="getWord(10)">
+<circle cx="50%" cy="50%" r="40%" stroke="#000000" stroke-width="2" fill="#E88828" />
+<text x="50%" y="50%" fill="white" font-size="5vw" font-family="Arial" dominant-baseline="central" text-anchor="middle">10</text>
+</svg>
+</div>
+
+<img id="buttonMenuMonkey1" src="img/other/mm1.png">
+<img id="buttonMenuMonkey2" src="img/other/mm2.png">
+<img id="buttonMenuMonkey3" src="img/other/mm3.png">
+<img id="buttonMenuMonkey4" src="img/other/mm4.png">
+<img id="buttonMenuMonkey5" src="img/other/mm5.png">
+
+<img id="wordDisplay" src="img/other/image13.png" onclick="getMonkeyGif()">
+<img id="monkeyGif" src="img/other/image13.png" onclick="showNumberButtonMenu()">
+
+</div> <!-- this is the WHOLESCREEN div -->
+
+
+
+
+</body>
+</html>
